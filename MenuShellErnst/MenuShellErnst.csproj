@@ -47,6 +47,7 @@
     <Compile Include="Domain\User.cs" />
     <Compile Include="Services\AuthenticationServices.cs" />
     <Compile Include="Services\IAuthenticationServices.cs" />
+    <Compile Include="Services\SearchUser.cs" />
     <Compile Include="View\AdminAddView.cs" />
     <Compile Include="View\AdminDeleteView.cs" />
     <Compile Include="View\AdminMainMenu.cs" />

@@ -1,5 +1,4 @@
-﻿
-using MenuShellErnst.Domain;
+﻿using MenuShellErnst.Domain;
 using MenuShellErnst.View;
 using System;
 using System.Collections.Generic;
@@ -28,6 +27,7 @@ namespace MenuShellErnst
             var printUser = new PrintUser(); 
             var authentication = new AuthenticationServices();
             var deleteUser = new DeleteUser();
+            var searchUser = new SearchUser();
             string result;
             User onlineUser = null;
             
@@ -86,7 +86,23 @@ namespace MenuShellErnst
                             else if (result == "2")
                             {
                                 adminDeleteUser.Display();
-                                deleteUser.RemoveUser(users);
+                                Console.WriteLine( "Who are you looking for?" );
+                                string searchTerm = Console.ReadLine();
+                                List<User> searchResult = new List<User>();
+                                foreach (var item in users)
+                                {
+                                    if (item.UserName.StartsWith(searchTerm))
+                                    {
+                                        searchResult.Add(item);
+                                    }
+                                }
+                                foreach (var item in searchResult)
+                                {
+                                    Console.WriteLine("Found: " + item.UserName);
+                                }
+                                //searchUser.searchUser(searchTerm, users);
+                                //deleteUser.RemoveUser(searchUser.searchUser(searchTerm, users));
+                                deleteUser.RemoveUserSearch(users, searchResult);
                             }
                             break;
 

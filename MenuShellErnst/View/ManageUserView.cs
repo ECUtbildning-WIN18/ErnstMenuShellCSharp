@@ -9,7 +9,7 @@ namespace MenuShellErnst.View
             base.Display();
             Console.WriteLine("What would you like to do?\n");
             Console.WriteLine("1. Add user");
-            Console.WriteLine("2. Delete user");
+            Console.WriteLine("2. Search user");
             string choice = Console.ReadLine();
             return choice;
         }

@@ -8,8 +8,7 @@ namespace MenuShellErnst.View
         public override string Display()
         {
             base.Display();
-            Console.WriteLine("Choose user to delete?");
-            Thread.Sleep(1000);
+            Console.WriteLine("Who are you looking for?");
             return "";
         }
     }
